@@ -16,10 +16,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>Travel Itinerary</title>
+    <title>Contact Me</title>
   </head>
   <body>
-    <h1>My Travel Itinerary</h1>
+    <h1>Contact Me</h1>
+    <img src="http://www.msnbc.com/sites/msnbc/files/null-sarahmuller1390E5C4-1604-B2FE-B709-D929747FFAFA.jpg" class="img-fluid" alt="Responsive image">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Navigate My Blog</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,8 +32,8 @@
           <li class="nav-item">
             <a class="nav-link" href="#">About Me</a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Itinerary for Upcoming Trip<span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Itinerary for Upcoming Trip</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -42,7 +43,7 @@
               <a class="dropdown-item" href="#">Instagram</a>
               <a class="dropdown-item" href="#">Snapchat</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Contact Me</a>
+              <a class="dropdown-item active" href="#">Contact Me<span class="sr-only">(current)</span></a>
             </div>
           </li>
 
@@ -53,37 +54,20 @@
         </form>
       </div>
     </nav>
-    <img src="https://blog.nucamprv.com/wp-content/uploads/sites/2/2017/02/Road-trip.jpg" class="img-fluid" alt="Responsive image">
-    <table class="table table-dark">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">City</th>
-          <th scope="col">Where I'm Staying</th>
-          <th scope="col">Hotel Link</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Seattle</td>
-          <td>Mediterranean Inn</td>
-          <td>https://www.mediterranean-inn.com/en-us</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Portland</td>
-          <td>Hotel Rose</td>
-          <td>https://www.staypineapple.com/hotel-rose-portland-or</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Denver</td>
-          <td>Queen Anne</td>
-          <td>http://www.queenannebnb.com</td>
-        </tr>
-      </tbody>
-    </table>
+
+    <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Message</label>
+    <input type="message" class="form-control" id="exampleInputMessage" placeholder="Message">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
