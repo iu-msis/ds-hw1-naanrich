@@ -1,20 +1,13 @@
 <!doctype html>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="css/dashboard.css">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <style>
     body {background-color: lightpink;}
     h1   {color: darkred;}
@@ -23,7 +16,11 @@
     <title>Travel Itinerary</title>
   </head>
   <body>
+    <div class="container-fluid">
     <h1>My Travel Itinerary</h1>
+    <div id="table"
+      {{ name }}
+    </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Navigate My Blog</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,7 +56,7 @@
     </nav>
     <a href="https://blog.nucamprv.com/wp-content/uploads/sites/2/2017/02/Road-trip.jpg">
     <img src="https://blog.nucamprv.com/wp-content/uploads/sites/2/2017/02/Road-trip.jpg" class="img-fluid" alt="Road Trip" /></a>
-    <table class="table table-dark">
+    <table id="travelTable" class="table table-dark">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -111,13 +108,15 @@
           <td>$202</td>
           <td>9/16/18</td>
         </tr>
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script src="js/tablesort.min.js"></script>
+<script>
+new Tablesort(document.getElementById('travelTable'));
+</script>
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container">
-    <table id="myTable" class=" table order-list">
+    <table id="travelTable" class=" table order-list">
     <thead>
         <tr>
             <td>City</td>
@@ -147,25 +146,14 @@
             <td class="col-sm-1"><a class="deleteRow"></a>
 
             </td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
+
             <td colspan="5" style="text-align: left;">
                 <input type="button" class="btn btn-lg btn-block " id="addrow" value="Add Row" />
             </td>
         </tr>
-        <tr>
-        </tr>
-    </tfoot>
-</table>
-</div>
       </tbody>
     </table>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </div>
+
   </body>
 </html>
