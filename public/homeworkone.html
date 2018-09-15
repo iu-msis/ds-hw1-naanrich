@@ -28,6 +28,7 @@
   <body>
     <main id="homeworkOne" class="container-fluid">
       <h1>{{user.name}}</h1>
+
       <div class="row">
         <div class="col placeholder">
         </div>
@@ -68,6 +69,7 @@
     </div>
     </nav>
     <div class="row">
+</div>
       <table id="Person" class="table table-striped table-sm table-hover">
         <thead>
           <tr>
@@ -90,8 +92,11 @@
           </tr>
         </tbody>
       </table>
-
-    </div> <!-- end row 3, tabular data -->
+      <div id="newPerson">
+        <!-- `greet` is the name of a method defined below -->
+        <button v-on:click="newPerson">New Person</button>
+      </div>
+     <!-- end row 3, tabular data -->
 </main>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
