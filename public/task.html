@@ -80,9 +80,9 @@
               <hr>
                 <h3>Add work</h3>
 
-                <form action="#" @submit.prevent="handleWorkForm">
-                  <p>Start: <input type="datetime-local" name="start" value=""></p>
-                  <p>End: <input type="datetime-local" name="stop"></p>
+                <form v-on:submit.prevent="handleWorkForm">
+                  <p>Start: <input type="datetime-local" name="start" value="" v-model="workForm.start" required></p>
+                  <p>End: <input type="datetime-local" name="stop" value="" v-model="workForm.stop" required></p>
                   <p>Logged work period is <strong>?? hours</strong></p>
                   <p>
                     Completion estimate

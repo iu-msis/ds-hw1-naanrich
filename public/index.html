@@ -101,7 +101,7 @@
               :key="task.id"
               :id=" 'task-' + task.id"
               :class= "task.current_sprint ? 'current-sprint' : '' "
-              @click="gotoTask(task.id)">
+              v-on:click="gotoTask(task.id)">
               <td></td>
               <td>{{ task.title }}</td>
               <td>{{ task.size }}</td>
