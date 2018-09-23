@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="css/dashboard.css">
+
+    <style>
+    body {background-color: lightpink;}
+    h1   {color: darkred;}
+    p    {color: red;}
+    </style>
+    <title>Travel Itinerary</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+    <h1>My Travel Itinerary</h1>
+    <table id="table" {{ name }}>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navigate My Blog</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Me</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Itinerary for Upcoming Trip<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Follow Me on Social Media
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Instagram</a>
+              <a class="dropdown-item" href="#">Snapchat</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Contact Me</a>
+            </div>
+          </li>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <a href="https://blog.nucamprv.com/wp-content/uploads/sites/2/2017/02/Road-trip.jpg">
+    <img src="https://blog.nucamprv.com/wp-content/uploads/sites/2/2017/02/Road-trip.jpg" class="img-fluid" alt="Road Trip" /></a>
+    <table id="travelTable" class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">City</th>
+          <th scope="col">Where I'm Staying</th>
+          <th scope="col">Hotel Link</th>
+          <th scope="col">Cost</th>
+          <th scope="col"> Check-In Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Seattle</td>
+          <td>Mediterranean Inn</td>
+          <td>https://www.mediterranean-inn.com/en-us</td>
+          <td>$149</td>
+          <td>9/06/18</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Portland</td>
+          <td>Hotel Rose</td>
+          <td>https://www.staypineapple.com/hotel-rose-portland-or</td>
+          <td>$162</td>
+          <td>9/09/18</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>San Francisco</td>
+          <td>Hotel Zeppelin</td>
+          <td>https://www.viceroyhotelsandresorts.com/en/zeppelin</td>
+          <td>$182</td>
+          <td>9/11/18</td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>Las Vegas</td>
+          <td>Marriott</td>
+          <td>https://www.marriott.com/default.mi</td>
+          <td>$134</td>
+          <td>9/14/18</td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td>Denver</td>
+          <td>Hilton</td>
+          <td>http://www3.hilton.com/en/index.html</td>
+          <td>$202</td>
+          <td>9/16/18</td>
+        </tr>
+</tbody>
+</table>
+<script src="js/tablesort.min.js"></script>
+<script>
+new Tablesort(document.getElementById('travelTable'));
+</script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <table id="travelTable2" class=" table order-list">
+    <thead>
+        <tr>
+            <td>City</td>
+            <td>Hotel</td>
+            <td>Website URL</td>
+            <td>Cost</td>
+            <td>Check-In Date</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="col-sm-2">
+                <input type="text" name="city" class="form-control" />
+            </td>
+            <td class="col-sm-2">
+                <input type="text" name="hotel"  class="form-control"/>
+            </td>
+            <td class="col-sm-3">
+                <input type="text" name="url"  class="form-control"/>
+            </td>
+            <td class="col-sm-2">
+                <input type="number" name="cost"  class="form-control"/>
+            </td>
+            <td class="col-sm-2">
+                <input type="date" name="date"  class="form-control"/>
+            </td>
+            <td class="col-sm-1"><a class="deleteRow"></a>
+
+            </td>
+
+            <td colspan="5" style="text-align: left;">
+                <input type="button" class="btn btn-lg btn-block " id="addrow" value="Add Row" />
+            </td>
+        </tr>
+      </tbody>
+    </table></div></table></div></body>
+</html>
