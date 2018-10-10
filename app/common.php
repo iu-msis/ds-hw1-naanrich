@@ -9,4 +9,4 @@ if ($_SERVER['REQUEST METHOD'] == 'POST'
   $_POST = json_decode(file_get_contents('php://input'), true);
 }
 /**models**/
- require 'models/comment.php';
+ require 'models/Comment.php';
