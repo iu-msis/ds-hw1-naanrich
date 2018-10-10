@@ -22,7 +22,7 @@ class Comment
   }
     public static function fetchAll() {
       $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-      $sql = 'SELECT * FROM commenttable;
+      $sql = 'SELECT * FROM commenttable
       $statement = $db->prepare($sql);
       $success = $statement->execute(
     );
