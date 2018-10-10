@@ -15,9 +15,9 @@ class Comment
     // 2. Prepare the query
     $statement = $db->prepare($sql);
     // 3. Run the query
-    $success = $statement->execute({
+    $success = $statement->execute([
       $this->comment
-    });
+    ]);
     $this->id = $db->lastInsertId();
   }
     public static function fetchAll() {
@@ -25,7 +25,6 @@ class Comment
       $sql = 'SELECT * FROM commenttable WHERE id= ?';
       $statement = $db->prepare($sql);
       $success = $statement->execute(
-        
     );
     }
     // 4. Handle the results
