@@ -26,7 +26,7 @@ class Comment
       $statement = $db->prepare($sql);
       $success = $statement->execute(
     );
-    }
+    
     // 4. Handle the results
     $arr = [];
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
