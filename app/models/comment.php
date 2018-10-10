@@ -30,7 +30,7 @@ class Comment
     // 4. Handle the results
     $arr = [];
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      $commentItem =  new commenttable($row);
+      $commentItem =  new Comment($row);
       array_push($arr, $commentItem);
     }
     return $arr;
