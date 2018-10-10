@@ -1,6 +1,6 @@
 <?php
 
-$work = new Comment($_POST);
+$work = new comment($_POST);
 
 $comment->create();
 echo json_encode($comment);
