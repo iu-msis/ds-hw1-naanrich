@@ -7,7 +7,7 @@ class Comment
     $this->id = intval($row['id']);
     $this->comment = $row['comment'];
   }
-  public static function create() {
+  public function create() {
     // 1. Connect to the database
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
     $sql = 'INSERT INTO commenttable (comment)
