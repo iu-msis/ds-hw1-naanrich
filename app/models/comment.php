@@ -22,11 +22,11 @@ class Comment
   }
     public static function fetchAll() {
       $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-      $sql = 'SELECT * FROM commenttable WHERE id= ?';
+      $sql = 'SELECT * FROM commenttable;
       $statement = $db->prepare($sql);
       $success = $statement->execute(
     );
-    
+
     // 4. Handle the results
     $arr = [];
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
