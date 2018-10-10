@@ -5,5 +5,5 @@ chdir(__DIR__);
 set_include_path (__DIR__);
 
 /**models**/
- require 'models/Comment.php';
+ require 'models/comment.php';
  require 'environment.php';
