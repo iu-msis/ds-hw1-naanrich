@@ -33,37 +33,24 @@
         <table id="commentTable" class="table table-striped table-sm table-hover">
           <thead>
             <tr>
-              <th>Task</th>
-              <th>Type</th>
-              <th>Size</th>
-              <th>Assigned Team</th>
-              <th>Status</th>
-              <th>Started</th>
-              <th>Hrs</th>
-              <th>% Complete</th>
+              <th>Id</th>
+              <th>Comment</th>
             </tr>
           </thead>
           <tbody id="commentTableBody">
-            <tr v-for="task in tasks"
-                :key="task.id"
-                :id="'task-' + task.id"
-                :class="task.current_sprint ? 'current-sprint' : '' "
-                @click="gotoTask(task.id)">
-              <td>{{ task.title }}</td>
-              <td>{{ task.type }}</td>
-              <td>{{ task.size }}</td>
-              <td>{{ task.team }}</td>
-              <td>{{ task.status }}</td>
-              <td>{{ task.start_date }}</td>
-              <td>{{ task.hours_worked }}</td>
-              <td :class="completeClass(task)">{{ task.perc_complete }}</td>
+            <tr v-for="comment in comments"
+                :key="comment.id"
+                :id="'comment-' + comment.id"
+                @click="gotoComment(comment.id)">
+              <td>{{ comment.id }}</td>
+              <td>{{ comment.comment }}</td>
             </tr>
           </tbody>
         </table>
       </div> <!-- end row 3, tabular data -->
       <form id="newCommentForm" class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <input id="comment" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button id="submitNewComment" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
 
 
@@ -76,9 +63,8 @@
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
 
-    <script src="js/dashboard.app.js"></script>
+    <script src="js/comment.js"></script>
 
-    <script src="js/tablesort.min.js"></script>
     <script>
       // Tablesort plugin from http://tristen.ca/tablesort/demo/
       Tablesort.extend('tshirt', function(item) {
@@ -90,7 +76,7 @@
         var sizes = ['XS', 'S', 'M', 'L', 'XL', '2XL'];
         return sizes.indexOf(b) - sizes.indexOf(a);
       });
-      new Tablesort(document.getElementById('taskTable'));
+      new Tablesort(document.getElementById('commentTable'));
     </script>
   </body>
 </html>
