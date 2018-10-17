@@ -33,9 +33,9 @@ getEmptyCommentForm() {
      fetch('api/comment.php')
      .then( response => response.json())
      .then( json => {commentApp.comment = json} );
-   }},
+   },
      created () {
    // Populate workForm with default values
 this.fetchInfo();
    this.commentForm = this.getEmptyCommentForm();
- )}}
+ }}
