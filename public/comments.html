@@ -28,15 +28,7 @@
   </div>
 
 <h1>Data</h1>
-<form @submit.prevent="handleCommentForm" id="newCommentForm">
-  <div class="form-group row">
-    <label for="comment" >Add Another Comment: </label>
-    <div>
-      <input type="text" id="comment" v-model="commentForm.comment" required>
-    </div>
-  </div>
-  <button type="submit" id="submitNewComment">Add Another Comment</button>
-</form>
+
 
       <div class="row">
         <table id="commentTable" class="table table-striped table-sm">
@@ -53,7 +45,15 @@
           </tbody>
         </table>
       </div> <!-- end row 3, tabular data -->
-
+      <form @submit.prevent="handleCommentForm" id="newCommentForm">
+        <div class="form-group row">
+          <label for="comment" >Add Another Comment: </label>
+          <div>
+            <input type="text" id="comment" v-model="commentForm.comment" required>
+          </div>
+        </div>
+        <button type="submit" id="submitNewComment">Add Another Comment</button>
+      </form>
 <div class="button">
   <button type="button" @click="fetchInfo()">Refresh</button>
 </div>
