@@ -1,21 +1,13 @@
 var commentApp = new Vue({
   el: '#commentMain',
   data: {
-    id: 0,
-    comment: '',
-  }
   comment : [ ],
-  commentForm: { },
-  commentList: [ ]
+  commentForm: { }
 },
 methods: {
-  handleCommentForm(e) {}
-  this.commentForm.id = this.id;
-  this.commentForm.comment = this.comment;
+  handleCommentForm(e) {
   const s = JSON.stringify(this.commentForm);
   console.log(s);
-
-
       fetch('api/comment.php', {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         headers: {
@@ -24,7 +16,8 @@ methods: {
         body: s // body data type must match "Content-Type" header
       })
       .then( response => response.json() )
-      .then( json => {this.comment.push(json)})
+      .then( json => {this.comment.push(json):
+      console.log(json);})
       .catch( err => {
         console.error('COMMENT POST ERROR:');
         console.error(err);
@@ -34,25 +27,21 @@ methods: {
 }
 getEmptyCommentForm() {
      return {
-       id: this.id,
-       comment: this.comment,
+       comment: ''
      }
+   },
+   fetchInfo () {
+     fetch('api/comment.php')
+     .then( response => response.json())
+     .then( json => {randomData.comment = json} );
+   }
+ },
+
      created () {
    // Populate workForm with default values
+this.fetchInfo();
    this.commentForm = this.getEmptyCommentForm();
 
-   // Do data fetch
-   const url = new URL(window.location.href);
-   const commentId = url.searchParams.get('commentId');
-   this.commentId = commentId;
-   console.log('Comment: '+ commentId);
-
-   fetch('api/comment.php?commentId='+commentId)
-    .then( response => response.json() )
-    .then( json => {commentApp.work = json} )
-    .catch( err => {
-      console.log('COMMENT FETCH ERROR:');
-      console.log(err);
     })
 
    })

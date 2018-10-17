@@ -12,47 +12,51 @@
     <title>Comments</title>
   </head>
   <body>
+<div class="container" id="functionalComment">
+  <div class="sidenav">
+    <div class="row">
+      <div class="col placeholder">
+        <a href="index.html">Home Page</a>
+      </div>
+      <div class="col placeholder">
+        <a href="userProfile.html">User</a>
+      </div>
+      <div class="col placeholder">
+        <a href="comments.html">Comment Data</a>
+      </div>
+    </div>
+  </div>
 
-
-        <section class="col">
-          <div class="row">
-            <div class="col">
-              <h2>Comments</h2>
-            </div></div>
-
-        </section>
-
-        <div class="row">
-          <section class="col">
-            <h2>Comments</h2>
-        </section></div>
-      <!-- end row 1, high-level summary information -->
-
+<h1>Data</h1>
+<form @submit.prevent="handleCommentForm" id="newCommentForm">
+  <div class="form-group row">
+    <label for="comment" >Add Another Comment: </label>
+    <div>
+      <input type="text" id="comment" v-model="commentForm.comment" required>
+    </div>
+  </div>
+  <button type="submit" id="submitNewComment">Add Another Comment</button>
+</form>
 
       <div class="row">
-        <table id="commentTable" class="table table-striped table-sm table-hover">
+        <table id="commentTable" class="table table-striped table-sm">
           <thead>
             <tr>
-              <th>Id</th>
               <th>Comment</th>
             </tr>
           </thead>
-          <tbody id="commentTableBody">
-            <tr v-for="comment in comments"
-                :key="comment.id"
-                :id="'comment-' + comment.id"
-                @click="gotoComment(comment.id)">
-              <td>{{ comment.id }}</td>
-              <td>{{ comment.comment }}</td>
+          <tbody id="commentTableBody" v-for="c in comment"
+          :key="c.id">
+            <tr>
+            <td>{{ c.comment }}</td>
             </tr>
           </tbody>
         </table>
       </div> <!-- end row 3, tabular data -->
-      <form id="newCommentForm" class="form-inline my-2 my-lg-0">
-        <input id="comment" class="form-control mr-sm-2" type="text" placeholder="Comment">
-        <button id="submitNewComment" class="btn btn-outline-success my-2 my-sm-0" type="submit">Comment</button>
-      </form>
 
+<div class="button">
+  <button type="button" @click="fetchInfo()">Refresh</button>
+</div>
 
 
     <!-- moment.js via CDN-->
@@ -64,19 +68,6 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
 
     <script src="js/comment.js"></script>
-
-    <script>
-      // Tablesort plugin from http://tristen.ca/tablesort/demo/
-      Tablesort.extend('tshirt', function(item) {
-        // Regular expression to test against.
-        return /^X?S|M|X?L|2XL$/.test(item);
-      }, function(a, b) {
-        // Custom sort functionality goes here.
-        // e.g var n = (a > b) ? -1 : 1;
-        var sizes = ['XS', 'S', 'M', 'L', 'XL', '2XL'];
-        return sizes.indexOf(b) - sizes.indexOf(a);
-      });
-      new Tablesort(document.getElementById('commentTable'));
-    </script>
+</div>
   </body>
 </html>
