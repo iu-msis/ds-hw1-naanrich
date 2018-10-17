@@ -1,6 +1,7 @@
 var commentApp = new Vue({
   el: '#commentMain',
   data: {
+    comment: ''}
   comment : [ ],
   commentForm: { }
 },
@@ -22,7 +23,6 @@ methods: {
         console.error('COMMENT POST ERROR:');
         console.error(err);
       });
-
       this.commentForm = this.getEmptyCommentForm();
 }
 getEmptyCommentForm() {
@@ -34,14 +34,9 @@ getEmptyCommentForm() {
      fetch('api/comment.php')
      .then( response => response.json())
      .then( json => {commentApp.comment = json} );
-   }
- },
-
+   }},
      created () {
    // Populate workForm with default values
 this.fetchInfo();
    this.commentForm = this.getEmptyCommentForm();
-
-    })
-
-   })
+    })})
