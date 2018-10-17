@@ -38,4 +38,4 @@ getEmptyCommentForm() {
    // Populate workForm with default values
 this.fetchInfo();
    this.commentForm = this.getEmptyCommentForm();
- }}
+ }}}
