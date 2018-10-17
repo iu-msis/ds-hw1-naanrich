@@ -23,7 +23,7 @@ methods: {
         console.error(err);
       });
       this.commentForm = this.getEmptyCommentForm();
-}
+},
 getEmptyCommentForm() {
      return {
        comment: ''
