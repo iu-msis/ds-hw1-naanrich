@@ -16,12 +16,12 @@ methods: {
         body: s // body data type must match "Content-Type" header
       })
       .then( response => response.json() )
-      .then( json => {this.comment.push(json):
+      .then( json => {this.comment.push(json);
       console.log(json);})
       .catch( err => {
         console.error('COMMENT POST ERROR:');
         console.error(err);
-      })
+      });
 
       this.commentForm = this.getEmptyCommentForm();
 }
@@ -33,7 +33,7 @@ getEmptyCommentForm() {
    fetchInfo () {
      fetch('api/comment.php')
      .then( response => response.json())
-     .then( json => {randomData.comment = json} );
+     .then( json => {commentApp.comment = json} );
    }
  },
 
